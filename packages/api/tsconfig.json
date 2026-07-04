@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "ES2021",
+		"module": "ESNext",
+		"lib": ["ES2021"],
+		"types": ["@cloudflare/workers-types"],
+		"moduleResolution": "bundler",
+		"strict": true,
+		"noEmit": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["worker-configuration.d.ts"]
+}

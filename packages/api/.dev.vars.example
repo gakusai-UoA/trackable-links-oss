@@ -1,0 +1,12 @@
+# Copy this file to `.dev.vars` for local `wrangler dev` runs.
+# In production, set these with `wrangler secret put <NAME>` instead.
+
+# Random string used to sign/verify admin session tokens (JWT HS256).
+# Generate one with: openssl rand -base64 48
+JWT_SECRET=change-me-to-a-long-random-string
+
+# Password required to log in to the admin UI / API.
+ADMIN_PASSWORD=change-me
+
+# Passcode a person physically installing a QR code must enter to label its location.
+LOCATION_SETUP_PASSCODE=change-me-too

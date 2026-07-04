@@ -1,0 +1,33 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Set this to your own Cloudflare account id (`wrangler whoami`).
+	"account_id": "<YOUR_CLOUDFLARE_ACCOUNT_ID>",
+	"name": "trackable-links-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2024-11-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"observability": { "enabled": true },
+	"dev": {
+		"port": 8789
+	},
+	// Custom domain / route the redirect endpoint should live on.
+	// Leave this out entirely to use the workers.dev subdomain instead.
+	// "routes": [{ "pattern": "links.example.com", "custom_domain": true }],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "trackable-links-db",
+			// Replace with the id printed by `wrangler d1 create trackable-links-db`.
+			"database_id": "<YOUR_D1_DATABASE_ID>"
+		}
+	],
+	"vars": {
+		// Comma-separated list of origins allowed to call the admin API from a browser.
+		// Use "*" for local development; restrict this in production.
+		"ALLOWED_ORIGINS": "http://localhost:5173,http://127.0.0.1:5173"
+	}
+	// Secrets (set with `wrangler secret put <NAME>`, never committed):
+	//   JWT_SECRET              - random string used to sign/verify admin session tokens
+	//   ADMIN_PASSWORD          - password required to log in to the admin UI
+	//   LOCATION_SETUP_PASSCODE - passcode required to label a freshly-printed QR code
+}

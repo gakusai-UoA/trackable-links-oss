@@ -1,0 +1,22 @@
+{
+	"name": "trackable-links-oss",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@9.15.0",
+	"engines": { "node": ">=20" },
+	"scripts": {
+		"dev": "concurrently --names \"api,web\" --prefix \"[{name}]\" \"pnpm --filter @trackable-links/api dev\" \"pnpm --filter @trackable-links/web dev\"",
+		"dev:api": "pnpm --filter @trackable-links/api dev",
+		"dev:web": "pnpm --filter @trackable-links/web dev",
+		"build": "pnpm --filter @trackable-links/web build",
+		"deploy:api": "pnpm --filter @trackable-links/api deploy",
+		"deploy:web": "pnpm --filter @trackable-links/web deploy",
+		"typecheck": "pnpm -r run typecheck",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"concurrently": "^9.1.0"
+	}
+}

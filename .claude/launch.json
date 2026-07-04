@@ -1,0 +1,17 @@
+{
+	"version": "0.0.1",
+	"configurations": [
+		{
+			"name": "api",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["--filter", "@trackable-links/api", "dev"],
+			"port": 8789
+		},
+		{
+			"name": "web",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["--filter", "@trackable-links/web", "dev"],
+			"port": 5173
+		}
+	]
+}

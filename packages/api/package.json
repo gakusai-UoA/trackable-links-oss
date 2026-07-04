@@ -1,0 +1,26 @@
+{
+	"name": "@trackable-links/api",
+	"private": true,
+	"type": "module",
+	"version": "0.1.0",
+	"engines": { "node": ">=20" },
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"typecheck": "tsc --noEmit",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"db:apply:local": "wrangler d1 execute trackable-links-db --local --file=./schema.sql",
+		"db:apply:remote": "wrangler d1 execute trackable-links-db --remote --file=./schema.sql"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.36.4",
+		"hono": "^4.6.14",
+		"jose": "^5.9.6",
+		"zod": "^3.24.1"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20241127.0",
+		"typescript": "^5.7.2",
+		"wrangler": "^3.90.0"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignore": [
+			"**/dist",
+			"**/node_modules",
+			"**/.wrangler",
+			"**/worker-configuration.d.ts"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": { "noNonNullAssertion": "off" },
+			"a11y": { "useButtonType": "off", "noAutofocus": "off" },
+			"suspicious": { "noArrayIndexKey": "off", "noExplicitAny": "off" },
+			"correctness": { "useExhaustiveDependencies": "off" }
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"semicolons": "always"
+		}
+	}
+}
