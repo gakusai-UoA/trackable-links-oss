@@ -3,6 +3,13 @@
 	"private": true,
 	"type": "module",
 	"version": "0.1.0",
+	"description": "QR redirect/logging Worker and admin API for Trackable Links.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gakusai-UoA/trackable-links-oss.git",
+		"directory": "packages/api"
+	},
 	"engines": { "node": ">=20" },
 	"scripts": {
 		"dev": "wrangler dev",

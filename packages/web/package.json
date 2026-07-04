@@ -3,6 +3,13 @@
 	"private": true,
 	"type": "module",
 	"version": "0.1.0",
+	"description": "Admin dashboard for Trackable Links.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gakusai-UoA/trackable-links-oss.git",
+		"directory": "packages/web"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
